@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page 1</title>
+</head>
+<body>
+  <h2>Page 1 - Store Data</h2>
+  <input type="text" id="dataInput" placeholder="Enter value">
+  <button onclick="saveData()">Send to Page 2</button>
+
+  <script>
+    function saveData() {
+      const value = document.getElementById("dataInput").value;
+      sessionStorage.setItem("passedValue", value);
+      window.location.href = "page2.html";
+    }
+  </script>
+</body>
+</html>   

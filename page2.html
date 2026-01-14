@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page 2</title>
+</head>
+<body>
+  <h2>Page 2 - Retrieved Data</h2>
+  <p id="display"></p>
+
+  <script>
+    const value = sessionStorage.getItem("passedValue");
+    document.getElementById("display").textContent = "Received: " + (value || "No data");
+  </script>
+</body>
+</html>   
