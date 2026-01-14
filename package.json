@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "firebase": "^12.7.0"
+  },
+  "name": "potter_quiz",
+  "version": "1.0.0",
+  "description": "Hari puttar",
+  "main": "index.js",
+  "type": "module",
+  "devDependencies": {},
+  "scripts": {
+    "test": "idk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pranav-J-Kumar-OOO/PotterQuiz.git"
+  },
+  "keywords": [
+    "hmm"
+  ],
+  "author": "Pranav J Kumar, Yajnesh Skandhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pranav-J-Kumar-OOO/PotterQuiz/issues"
+  },
+  "homepage": "https://github.com/Pranav-J-Kumar-OOO/PotterQuiz#readme"
+}
