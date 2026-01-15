@@ -23,6 +23,7 @@ document.getElementById("sub").addEventListener("click", () => {
   else {
     console.log(array);
     localStorage.setItem("Array",JSON.stringify(array));
-    window.location.replace("quiz2.html");
+    window.location.replace("Quiz2.html");
   }
+
 });
