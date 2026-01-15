@@ -1,5 +1,4 @@
 import { initializeApp } from "firebase/app";
-// 1. Keep all Firestore imports together at the top
 import { getFirestore, doc, setDoc, serverTimestamp } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -16,7 +15,6 @@ const db = getFirestore(app);
 
 async function saveUserQuizData(grade, username, score, teamName) {
   try {
-    // Ensure userId is a string even if a number is passed
     const stringGrade = String(grade); 
     const stringName = String(username); 
     
@@ -35,5 +33,4 @@ async function saveUserQuizData(grade, username, score, teamName) {
   }
 }
 
-// Pass the ID as a string!
 saveUserQuizData("12th", "Pjk", 67, "uganda");
