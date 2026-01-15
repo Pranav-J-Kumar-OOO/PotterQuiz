@@ -25,16 +25,12 @@ async function getLeaderboard() {
   try {
     console.log("--- POTTER QUIZ RESULTS ---");
     
-    // 1. Reference the collection
     const quizCollection = collection(db, "quiz_entries");
 
-    // 2. Create a query: Sort by score (descending) and take top 10
     const q = query(quizCollection, orderBy("score", "desc"), limit(10));
 
-    // 3. Execute the query
     const querySnapshot = await getDocs(q);
 
-    // 4. Loop through results
     if (querySnapshot.empty) {
       console.log("No scores found yet!");
     } else {
@@ -47,7 +43,6 @@ async function getLeaderboard() {
   } catch (error) {
     console.error("Error retrieving data:", error);
   } finally {
-    // 5. Clean up connection so script ends
     await terminate(db);
   }
 }
