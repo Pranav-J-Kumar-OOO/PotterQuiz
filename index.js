@@ -14,15 +14,16 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-async function saveUserQuizData(userId, username, score, teamName) {
+async function saveUserQuizData(grade, username, score, teamName) {
   try {
     // Ensure userId is a string even if a number is passed
-    const stringId = String(userId); 
+    const stringGrade = String(grade); 
+    const stringName = String(username); 
     
-    const userRef = doc(db, "quiz_entries", stringId);
+    const userRef = doc(db, "quiz_entries", stringName);
     
     await setDoc(userRef, {
-      username: username,
+      grade: grade,
       score: score,
       rank: teamName,
       updatedAt: serverTimestamp()
@@ -35,4 +36,4 @@ async function saveUserQuizData(userId, username, score, teamName) {
 }
 
 // Pass the ID as a string!
-saveUserQuizData("641032", "Pjk", 67, "uganda");
+saveUserQuizData("12th", "Pjk", 67, "uganda");
