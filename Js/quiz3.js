@@ -28,6 +28,6 @@ document.getElementById("sub").addEventListener("click", () => {
     console.log(array);
     localStorage.setItem("Array",JSON.stringify(pre_array.concat(array)));
     console.log(pre_array.concat(array));
-    window.location.replace("https://pranav-j-kumar-ooo.github.io/PotterQuiz/result.html");
+    window.location.replace("result.html");
   }
 });
