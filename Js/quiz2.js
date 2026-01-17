@@ -6,6 +6,14 @@ const q_holder = document.getElementById("qh");
 const l = q_holder.children.length;
 var array = [];
 const pre_array = JSON.parse(localStorage.getItem("Array"));
+const elem = document.documentElement;
+
+if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+} else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+} else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
 
 document.getElementById("pre").addEventListener("click", () => {
     window.location.replace("Quiz1.html");
@@ -30,4 +38,5 @@ document.getElementById("sub").addEventListener("click", () => {
     console.log(pre_array.concat(array));
     window.location.replace("Quiz3.html");
   }
+
 });
