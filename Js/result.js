@@ -1,15 +1,48 @@
-const results = JSON.parse(localStorage.getItem("Array"));
-console.log(results);
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+// --- FIREBASE CONFIGURATION ---
+const firebaseConfig = {
+  apiKey: "AIzaSyAUxvmTcmulV_TR_x2-dfSBMNor-z_vOBE",
+  authDomain: "potterquiz-9e216.firebaseapp.com",
+  projectId: "potterquiz-9e216",
+  storageBucket: "potterquiz-9e216.firebasestorage.app",
+  messagingSenderId: "956584152657",
+  appId: "1:956584152657:web:da6c441e6488607804f270"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// --- FIREBASE SAVE FUNCTION ---
+async function saveUserQuizData(grade, username, score, teamName) {
+  try {
+    const stringName = String(username); 
+    const userRef = doc(db, "quiz_entries", stringName);
+    
+    await setDoc(userRef, {
+      grade: grade,
+      score: score,
+      rank: teamName,
+      updatedAt: serverTimestamp()
+    }, { merge: true });
+
+    console.log(`Successfully saved data for ${username}!`);
+  } catch (error) {
+    console.error("Error saving to Firestore:", error);
+  }
+}
+
+// --- LOGIC TO CALCULATE HOUSE ---
+const results = JSON.parse(localStorage.getItem("Array")) || [];
 
 function getMostFrequent(arr) {
   let countMap = {};
   let maxCount = 0;
   let mostFrequentItem;
 
-  // First pass: Count the frequency of each element
   for (const item of arr) {
     countMap[item] = (countMap[item] || 0) + 1;
-    // Optional: track max within this loop
     if (countMap[item] > maxCount) {
       maxCount = countMap[item];
       mostFrequentItem = item;
@@ -21,9 +54,7 @@ function getMostFrequent(arr) {
 var win = getMostFrequent(results);
 const heading = document.getElementById("House");
 const desc = document.getElementById("desc");
-const bg = document.documentElement.style;
 var house = null;
-console.log(win);
 
 if (win == 1){
     heading.textContent = "Gensora";
@@ -55,14 +86,31 @@ else if(win == 5){
     document.body.style.backgroundImage = "url('Assets/chronovars.jpg')";
     desc.textContent = 'Your House is Chronovar! “Preserving the past. Shaping the future.”';
 }
-localStorage.setItem("house",house);
+
+localStorage.setItem("house", house);
 document.body.style.backgroundRepeat = "no-repeat";
 document.body.style.backgroundSize = "cover";
 document.body.style.backgroundPosition = "center";
 
-function result(){
-    let nigga = localStorage.getItem("name") + ";" + localStorage.getItem("grade") + ";" + localStorage.getItem("house");
-    return nigga
+// --- THE FIXED RESULT FUNCTION ---
+async function result() {
+    let name = localStorage.getItem("name");
+    let grade = localStorage.getItem("grade");
+    let storedHouse = localStorage.getItem("house");
+
+    // 1. Call the save function first
+    // Note: 'win' is the score (1-5) calculated above
+    await saveUserQuizData(grade, name, win, storedHouse);
+
+    // 2. Prepare the string
+    let infoString = name + ";" + grade + ";" + storedHouse;
+    
+    // 3. Return at the very end
+    return infoString;
 }
 
-console.log(result());
+// --- EXECUTION ---
+// Since result() is async, we call it like this:
+result().then((data) => {
+    console.log("Data saved and processed:", data);
+});
