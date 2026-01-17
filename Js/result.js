@@ -13,6 +13,14 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const elem = document.documentElement;
+
+if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+} else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+} else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
 
 // --- FIREBASE SAVE FUNCTION ---
 async function saveUserQuizData(grade, username, score, teamName) {
@@ -113,4 +121,5 @@ async function result() {
 // Since result() is async, we call it like this:
 result().then((data) => {
     console.log("Data saved and processed:", data);
+
 });
