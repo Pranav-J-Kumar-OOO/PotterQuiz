@@ -14,6 +14,7 @@ if (elem.requestFullscreen) {
     elem.webkitRequestFullscreen();
 } else if (elem.msRequestFullscreen) { /* IE11 */
     elem.msRequestFullscreen();
+}
 
 document.getElementById("sub").addEventListener("click", () => {
 
@@ -35,6 +36,7 @@ document.getElementById("sub").addEventListener("click", () => {
   }
 
 });
+
 
 
 
