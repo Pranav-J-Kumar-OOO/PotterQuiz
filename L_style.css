@@ -64,7 +64,7 @@ h1 {
   text-align: center;
   color: #007F7F;
   margin-bottom: 30px;
-  font-size: 28px;
+  font-size: 38px;
   font-weight: 700;
   text-align: center;
 }
@@ -89,7 +89,7 @@ input {
   padding: 12px 15px;
   border: 2px solid #e66414;
   background-color: var(--secondary);
-  font-size: 16px;
+  font-size: 36px;
   outline: none;
   transition: all 0.3s;
 }
@@ -165,5 +165,6 @@ button:hover {
   text-decoration: underline;
 
 }
+
 
 
