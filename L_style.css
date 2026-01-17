@@ -1,7 +1,7 @@
 :root {
-  --primary: #000000;
+  --primary: #007F7F;
   --secondary: #FFFFFF;
-  --accent: #FF5E5B;
+  --accent: #f16464;
   --shadow: 8px 8px 0px var(--primary);
 }
 
@@ -55,11 +55,14 @@ h1 {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  color: var(--primary);
+  color: #007F7F;
   margin-bottom: 30px;
   font-size: 28px;
   font-weight: 700;
   text-align: center;
+}
+#sign{
+  color: #e66414;
 }
 
 .input-group {
@@ -71,13 +74,13 @@ label {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
-  color: var(--primary);
+  color: #e66414;
 }
 
 input {
   width: 100%;
   padding: 12px 15px;
-  border: 2px solid var(--primary);
+  border: 2px solid #e66414;
   background-color: var(--secondary);
   font-size: 16px;
   outline: none;
