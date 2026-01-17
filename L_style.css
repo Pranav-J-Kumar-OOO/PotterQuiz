@@ -27,14 +27,22 @@ body {
 }
 
 .login-container {
-  width: 100%;
-  max-width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 65%;
+  transform: translate(-50%, -220%);
   border: 1px solid var(--primary);
   padding: 40px 30px;
   background-color: var(--secondary);
   box-shadow: var(--shadow);
   position: relative;
   border-radius: 12px;
+}
+@media (min-width: 1024px) {
+  .login-container {
+    transform: translate(-50%, -60%);
+  }
 }
 
 .login-container::before {
@@ -156,4 +164,5 @@ button:hover {
   color: var(--primary);
   font-weight: bold;
   text-decoration: underline;
+
 }
