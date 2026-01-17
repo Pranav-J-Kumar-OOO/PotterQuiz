@@ -14,6 +14,7 @@ if (elem.requestFullscreen) {
     elem.webkitRequestFullscreen();
 } else if (elem.msRequestFullscreen) { /* IE11 */
     elem.msRequestFullscreen();
+}
 
 document.getElementById("pre").addEventListener("click", () => {
     window.location.replace("Quiz1.html");
@@ -40,3 +41,4 @@ document.getElementById("sub").addEventListener("click", () => {
   }
 
 });
+
