@@ -25,6 +25,8 @@
     align-items: center;
     justify-content: center;
     padding: 48px;
+    height: 100%;
+    width: 100%;
   }
   .formbold-form-wrapper h1,
   .formbold-form-wrapper h2,
@@ -34,7 +36,7 @@
 
   .formbold-form-wrapper {
     padding: 40px;
-    max-height: 65%;
+    height: 95%;
     display: flex;
     background: rgba(255, 255, 255, 0.6); /* transparency */
     backdrop-filter: blur(4px);
@@ -72,7 +74,6 @@
   .questionholder {
     flex: 1;
     display: block;
-    max-height: 500px;
     flex-direction: column; /* TOP → DOWN */
     align-items: left;
     justify-content: left;
@@ -133,6 +134,7 @@
     justify-content: center;
     text-align: left;
     margin: 0;
+    height: 100%;
   }
 
   .formbold-mb-5 {
@@ -216,3 +218,4 @@
   .formbold-btn:hover {
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
   }
+
