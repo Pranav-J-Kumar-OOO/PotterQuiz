@@ -21,6 +21,7 @@ if (elem.requestFullscreen) {
     elem.webkitRequestFullscreen();
 } else if (elem.msRequestFullscreen) { /* IE11 */
     elem.msRequestFullscreen();
+}
 
 // --- FIREBASE SAVE FUNCTION ---
 async function saveUserQuizData(grade, username, score, teamName) {
@@ -123,3 +124,4 @@ result().then((data) => {
     console.log("Data saved and processed:", data);
 
 });
+
