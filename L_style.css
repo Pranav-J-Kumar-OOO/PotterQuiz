@@ -27,14 +27,21 @@ body {
 }
 
 .login-container {
-  width: 100%;
-  max-width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 65%;
+  transform: translate(-50%, -32vh);
   border: 1px solid var(--primary);
   padding: 40px 30px;
   background-color: var(--secondary);
   box-shadow: var(--shadow);
-  position: relative;
   border-radius: 12px;
+}
+@media (min-width: 1024px) {
+  .login-container {
+    width: 55%;
+  }
 }
 
 .login-container::before {
@@ -51,13 +58,13 @@ body {
 
 h1 {
   position: absolute;
-  top: 6%;              /* distance from top */
+  top: 4%;              /* distance from top */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   color: #007F7F;
   margin-bottom: 30px;
-  font-size: 28px;
+  font-size: 38px;
   font-weight: 700;
   text-align: center;
 }
@@ -75,6 +82,7 @@ label {
   margin-bottom: 8px;
   font-weight: bold;
   color: #e66414;
+  font-size: 24;
 }
 
 input {
@@ -82,7 +90,7 @@ input {
   padding: 12px 15px;
   border: 2px solid #e66414;
   background-color: var(--secondary);
-  font-size: 16px;
+  font-size: 30px;
   outline: none;
   transition: all 0.3s;
 }
@@ -156,4 +164,9 @@ button:hover {
   color: var(--primary);
   font-weight: bold;
   text-decoration: underline;
+
 }
+
+
+
+

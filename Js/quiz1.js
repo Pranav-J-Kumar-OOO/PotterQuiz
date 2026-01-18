@@ -6,6 +6,15 @@ const q_holder = document.getElementById("qh");
 const l = q_holder.children.length;
 var array = [];
 var com = 0;
+const elem = document.documentElement;
+
+if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+} else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+} else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+}
 
 document.getElementById("sub").addEventListener("click", () => {
 
@@ -27,5 +36,7 @@ document.getElementById("sub").addEventListener("click", () => {
   }
 
 });
+
+
 
 

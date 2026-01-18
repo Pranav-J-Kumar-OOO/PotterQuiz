@@ -25,6 +25,8 @@
     align-items: center;
     justify-content: center;
     padding: 48px;
+    height: 100%;
+    width: 100%;
   }
   .formbold-form-wrapper h1,
   .formbold-form-wrapper h2,
@@ -34,9 +36,10 @@
 
   .formbold-form-wrapper {
     padding: 40px;
-    max-height: 65%;
+    height: 95%;
+    width: 90%;
     display: flex;
-    background: rgba(255, 255, 255, 0.6); /* transparency */
+    background: rgba(255, 255, 255, 0.55); /* transparency */
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     flex-direction: column; /* stack top → down */
@@ -71,8 +74,8 @@
   }
   .questionholder {
     flex: 1;
+    gap: 20px;
     display: block;
-    max-height: 500px;
     flex-direction: column; /* TOP → DOWN */
     align-items: left;
     justify-content: left;
@@ -116,23 +119,25 @@
   .formbold-form-label {
     color: #007F7F;
     font-weight: 1000;
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 32px;
+    line-height: 40px;
     display: block;
     margin-bottom: 10px;
   }
 
   .formbold-form-heading {
+    gap: 30px;
     color: #e66414;
-    font-size: 25px;
+    font-size: 37px;
     font-weight: 1000;
-    line-height: 30px;
+    line-height: 42px;
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
     justify-content: center;
     text-align: left;
     margin: 0;
+    height: 100%;
   }
 
   .formbold-mb-5 {
@@ -145,8 +150,8 @@
     gap: 10px;
   }
   .formbold-radio-label {
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 25px;
+    line-height: 30px;
     color: #4f6d7a;
     position: relative;
     padding-left: 25px;
@@ -216,3 +221,8 @@
   .formbold-btn:hover {
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
   }
+
+
+
+
+
